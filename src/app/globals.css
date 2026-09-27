@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Level Up brand palette ---- */
+  --color-ink: #10243f;
+  --color-ink-deep: #0a1729;
+  --color-ink-soft: #1d3859;
+  --color-ink-line: #2b4467;
+  --color-signal: #c61030;
+  --color-signal-deep: #9d0b26;
+  --color-paper: #f7f8fa;
+  --color-paper-pure: #ffffff;
+  --color-gold: #ecaa38;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+
+  --radius-plate: 2px;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Base
+ * ------------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+  --edge: clamp(1.25rem, 5vw, 5.5rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-signal);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.on-ink :focus-visible {
+  outline-color: var(--color-gold);
+}
+
+@layer components {
+/* ------------------------------------------------------------------ *
+ *  Type system — Plus Jakarta Sans: nagłówki mocne, ale bez przesadnej
+ *  wagi i szerokości; etykiety czytelne, z umiarkowanym rozstrzeleniem.
+ * ------------------------------------------------------------------ */
+.t-display {
+  font-family: var(--font-sans);
+  font-weight: 760;
+  letter-spacing: -0.032em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.t-head {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.t-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .t-label {
+    font-size: 0.78rem;
+  }
+}
+
+.t-body {
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+.t-quote {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.t-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ------------------------------------------------------------------ *
+ *  Reveal primitives (GSAP drives the inner element)
+ * ------------------------------------------------------------------ */
+/* Maska linii: musi zostawić miejsce na polskie znaki diakrytyczne (Ó, Ć, Ż)
+   przy ciasnej interlinii, inaczej kreski nad literami są obcinane. */
+.mask {
+  display: block;
+  overflow: hidden;
+  padding-top: 0.2em;
+  padding-bottom: 0.12em;
+  margin-top: -0.2em;
+  margin-bottom: -0.12em;
+}
+
+.mask > * {
+  display: block;
+  will-change: transform;
+}
+
+[data-anim] {
+  will-change: transform, opacity;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Brand geometry
+ * ------------------------------------------------------------------ */
+.plate-arch {
+  border-radius: 46% 46% 6px 6px / 34% 34% 6px 6px;
+}
+
+.rule-red {
+  height: 4px;
+  background: var(--color-signal);
+  transform-origin: left center;
+}
+
+.hairline {
+  border-color: color-mix(in srgb, var(--color-ink) 14%, transparent);
+}
+
+.on-ink .hairline {
+  border-color: color-mix(in srgb, #ffffff 16%, transparent);
+}
+
+/* Accordion */
+.acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.acc-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.acc-panel > div {
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------------ *
+ *  Przewijany pasek opinii
+ * ------------------------------------------------------------------ */
+/* Pas jedzie bez przerwy — bez pauzy na hover, focus ani dotyk.
+   Krawędzie wygaszamy nakładkami z gradientem zamiast mask-image:
+   maska na rodzicu animowanej warstwy wymusza w Safari przerysowanie
+   w każdej klatce, gradient jest zwykłą, statyczną warstwą. */
+.marquee {
+  position: relative;
+  overflow: hidden;
+  --marquee-fade: 28px;
+}
+
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: var(--marquee-fade);
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-paper), transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-paper), transparent);
+}
+
+@media (min-width: 768px) {
+  .marquee {
+    --marquee-fade: 72px;
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
+  animation: marquee-left var(--marquee-duration, 60s) linear infinite;
+}
+
+.marquee-track[data-dir="right"] {
+  animation-name: marquee-right;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Hide scrollbar on the mobile goal rail */
+.no-bar {
+  scrollbar-width: none;
+}
+.no-bar::-webkit-scrollbar {
+  display: none;
+}
+}
+
+/* ------------------------------------------------------------------ *
+ *  Reduced motion
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee {
+    overflow-x: auto;
+  }
+  .marquee::before,
+  .marquee::after {
+    display: none;
+  }
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .marquee-track > [data-clone="true"] {
+    display: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
