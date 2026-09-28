@@ -373,8 +373,8 @@ export function BookingModal() {
             {status === "done" ? (
               <div className="py-2">
                 <p className="t-body text-ink/70 max-w-md text-[16px]">
-                  Skontaktujemy się z Tobą, aby ustalić szczegóły. Jeśli wolisz
-                  nie czekać — zadzwoń albo napisz bezpośrednio.
+                  Skontaktujemy się z Tobą, aby ustalić szczegóły. Jeśli nie
+                  chcesz czekać, zadzwoń albo napisz.
                 </p>
                 <div className="mt-6 flex flex-col gap-2">
                   <a
@@ -521,13 +521,13 @@ export function BookingModal() {
                   />
                   <span className="text-ink/60">
                     Zgadzam się na kontakt w sprawie tego zgłoszenia. Dane
-                    wykorzystujemy tylko po to, żeby się odezwać —{" "}
+                    wykorzystamy tylko do kontaktu z Tobą. Więcej w{" "}
                     <Link
                       href="/polityka-prywatnosci"
                       className="text-ink underline underline-offset-2"
                       target="_blank"
                     >
-                      polityka prywatności
+                      polityce prywatności
                     </Link>
                     .
                   </span>
@@ -571,7 +571,7 @@ export function BookingModal() {
           ) : step === 1 ? (
             <>
               <p className="text-ink/40 hidden text-[12.5px] sm:block">
-                Bez zobowiązań — szczegóły ustalamy w rozmowie.
+                Zgłoszenie do niczego nie zobowiązuje. Szczegóły ustalimy w rozmowie.
               </p>
               <button
                 type="button"

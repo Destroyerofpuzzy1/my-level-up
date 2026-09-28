@@ -13,35 +13,35 @@ export type FaqItem = { q: string; a: string };
 export const faq: FaqItem[] = [
   {
     q: "Ile kosztują zajęcia?",
-    a: "Lekcja indywidualna to 90 zł za 60 minut. W mini-grupie dwuosobowej — 70 zł od osoby, a w grupie 3–4 osobowej — 50 zł od osoby. Materiały do nauki są w cenie zajęć.",
+    a: "Lekcja indywidualna kosztuje 90 zł za 60 minut. W mini-grupie dla 2 osób płacisz 70 zł od osoby, a w grupie 3–4 osób 50 zł od osoby. Materiały do nauki są w cenie.",
   },
   {
     q: "Czy lekcje odbywają się online?",
-    a: "Tak. Zajęcia prowadzone są online, więc uczysz się z domu i nie tracisz czasu na dojazdy. Godziny ustalamy indywidualnie.",
+    a: "Tak. Uczysz się z domu i nie tracisz czasu na dojazdy. Godziny ustalamy indywidualnie.",
   },
   {
     q: "Czy mogę zacząć od zera?",
-    a: "Tak. Marek pracuje na wszystkich poziomach — od A1 do C2. Na początku ustalamy, na czym stoisz i od czego zacząć, żeby materiał nie był ani za łatwy, ani za trudny.",
+    a: "Tak. Marek uczy na wszystkich poziomach, od A1 do C2. Na początku ustalamy, co już umiesz, i dobieramy materiał tak, żeby nie był ani za łatwy, ani za trudny.",
   },
   {
     q: "Czy przygotowujesz do matury i egzaminu ósmoklasisty?",
-    a: "Tak. Szkoła prowadzi przygotowanie do matury oraz do egzaminu ósmoklasisty. Pracujemy na zadaniach egzaminacyjnych i na tym, co sprawia najwięcej trudności.",
+    a: "Tak. Przygotowujemy do matury i do egzaminu ósmoklasisty. Ćwiczymy na zadaniach egzaminacyjnych i skupiamy się na tym, co sprawia Ci najwięcej trudności.",
   },
   {
     q: "Czy przygotowujesz do FCE i CAE?",
-    a: "Tak. W ofercie jest przygotowanie do egzaminów Cambridge — FCE i CAE. Marek ma certyfikaty CAE oraz CPE na poziomie C2.",
+    a: "Tak. Przygotowujemy do egzaminów Cambridge FCE i CAE. Marek sam ma certyfikaty CAE i CPE na poziomie C2.",
   },
   {
     q: "Czy mogę uczyć się w parze albo w małej grupie?",
-    a: "Tak. Poza zajęciami indywidualnymi są mini-grupy: dwuosobowe oraz 3–4 osobowe. To tańsza opcja, a grupa jest na tyle mała, że każdy mówi na każdych zajęciach.",
+    a: "Tak. Oprócz lekcji indywidualnych są mini-grupy dla 2 osób i dla 3–4 osób. To tańsza opcja, a grupa jest na tyle mała, że każdy mówi na każdych zajęciach.",
   },
   {
     q: "Czy materiały są w cenie?",
-    a: "Tak. Zgodnie z ofertą szkoły materiały do nauki są bezpłatne — nie musisz kupować osobnego podręcznika.",
+    a: "Tak. Materiały do nauki są w cenie zajęć, więc nie musisz kupować podręcznika.",
   },
   {
     q: "Kto prowadzi zajęcia?",
-    a: "Wszystkie lekcje prowadzi Marek — absolwent filologii angielskiej, korporacyjny trener Business English, z certyfikatem LCCI oraz certyfikatami CAE i CPE (C2).",
+    a: "Wszystkie lekcje prowadzi Marek. Jest absolwentem filologii angielskiej i korporacyjnym trenerem Business English. Ma certyfikat LCCI oraz certyfikaty CAE i CPE (C2).",
   },
 ];
 

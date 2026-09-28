@@ -344,7 +344,7 @@ export function Reviews() {
               <Stars size={15} />
             </div>
             <p className="mt-3 text-[13.5px] text-white/55">
-              {googleRating.count} opinii — wszystkie na pięć gwiazdek.
+              {googleRating.count} opinii, wszystkie na pięć gwiazdek.
             </p>
           </div>
 

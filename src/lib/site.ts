@@ -66,7 +66,7 @@ export const pricing = [
     unit: "zł",
     per: "za 60 minut",
     blurb:
-      "Cała lekcja tylko dla Ciebie. Tempo, tematy i materiał ustawiamy pod to, czego akurat potrzebujesz.",
+      "Cała lekcja jest tylko dla Ciebie. Tempo i tematy dopasowujemy do tego, czego potrzebujesz.",
     points: ["Pełna uwaga nauczyciela", "Materiały w cenie zajęć"],
     accent: true,
   },
@@ -78,7 +78,7 @@ export const pricing = [
     unit: "zł",
     per: "od osoby",
     blurb:
-      "Nauka z kimś, kogo znasz — partnerem, znajomym, kolegą z pracy. Więcej rozmowy, niższa cena.",
+      "Uczysz się razem z partnerem, znajomym albo kolegą z pracy. Więcej rozmowy, niższa cena.",
     points: ["Dwie osoby na zajęciach", "Materiały w cenie zajęć"],
     accent: false,
   },
@@ -90,7 +90,7 @@ export const pricing = [
     unit: "zł",
     per: "od osoby",
     blurb:
-      "Motywacja, dużo praktyki i dobra atmosfera. Grupa na tyle mała, że każdy mówi na każdej lekcji.",
+      "Grupa jest mała, więc każdy mówi na każdej lekcji. Dużo praktyki i dobra atmosfera.",
     points: ["Od 3 do 4 osób", "Materiały w cenie zajęć"],
     accent: false,
   },

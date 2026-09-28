@@ -84,17 +84,17 @@ export default function PrivacyPage() {
 
         <H2>Jak długo je przechowujemy</H2>
         <P>
-          Do czasu zakończenia kontaktu w sprawie zgłoszenia, a jeśli dojdzie do
-          zapisania się na zajęcia — przez czas trwania współpracy i okres
-          wymagany przepisami. Możesz w każdej chwili poprosić o usunięcie
+          Do czasu zakończenia kontaktu w sprawie zgłoszenia. Jeśli zapiszesz się
+          na zajęcia, przechowujemy je przez czas współpracy i tak długo, jak
+          wymagają tego przepisy. Możesz w każdej chwili poprosić o usunięcie
           danych, pisząc na adres e-mail podany wyżej.
         </P>
 
         <H2>Komu przekazujemy dane</H2>
         <P>
-          Dane ze zgłoszenia trafiają na serwer, na którym działa ta strona, oraz
-          — jeśli skonfigurowano wysyłkę powiadomień — na skrzynkę e-mail szkoły
-          za pośrednictwem dostawcy usługi wysyłki wiadomości. Nie sprzedajemy i
+          Dane ze zgłoszenia trafiają na serwer, na którym działa ta strona.
+          Jeśli włączona jest wysyłka powiadomień, trafiają też na skrzynkę
+          e-mail szkoły przez dostawcę usługi wysyłki wiadomości. Nie sprzedajemy i
           nie udostępniamy danych w celach marketingowych.
         </P>
 
@@ -102,8 +102,8 @@ export default function PrivacyPage() {
         <P>
           Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia,
           ograniczenia przetwarzania, przeniesienia oraz wniesienia sprzeciwu.
-          Zgodę możesz wycofać w dowolnym momencie — nie wpływa to na zgodność z
-          prawem przetwarzania przed jej wycofaniem. Przysługuje Ci też skarga do
+          Zgodę możesz wycofać w dowolnym momencie. Nie wpływa to na zgodność
+          z prawem przetwarzania, które odbyło się wcześniej. Przysługuje Ci też skarga do
           Prezesa Urzędu Ochrony Danych Osobowych.
         </P>
 

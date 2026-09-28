@@ -8,9 +8,9 @@ export const GOALS: Option[] = [
 ];
 
 export const LESSON_TYPES: Option[] = [
-  { id: "indywidualnie", label: "Indywidualnie — 90 zł / 60 min" },
-  { id: "para", label: "Mini-grupa, 2 osoby — 70 zł / os." },
-  { id: "grupa", label: "Mini-grupa, 3–4 osoby — 50 zł / os." },
+  { id: "indywidualnie", label: "Indywidualnie, 90 zł / 60 min" },
+  { id: "para", label: "Mini-grupa (2 osoby), 70 zł / os." },
+  { id: "grupa", label: "Mini-grupa (3–4 osoby), 50 zł / os." },
 ];
 
 export const LEVELS: Option[] = [

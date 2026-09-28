@@ -22,7 +22,7 @@ const GOALS: Goal[] = [
   {
     id: "konwersacje",
     label: "Chcę swobodnie rozmawiać",
-    lead: "Zajęcia oparte na mówieniu. Gramatykę tłumaczymy na przykładach z życia, a błędy poprawiamy na bieżąco — tak, żeby przestały blokować Cię w rozmowie.",
+    lead: "Dużo rozmawiamy i ćwiczymy na przykładach z życia. Na bieżąco poprawiamy błędy i wyjaśniamy gramatykę.",
     pointsLabel: "Na czym pracujemy",
     points: [
       "Mówienie od pierwszej lekcji",
@@ -36,17 +36,17 @@ const GOALS: Goal[] = [
   {
     id: "egzamin",
     label: "Przygotowuję się do egzaminu",
-    lead: "Pracujemy na zadaniach z konkretnego egzaminu: strategie, powtórka brakującego materiału i regularne sprawdzanie postępów.",
+    lead: "Ćwiczymy na zadaniach z Twojego egzaminu. Uczysz się, jak je rozwiązywać, powtarzasz to, czego brakuje, i regularnie sprawdzasz postępy.",
     pointsLabel: "Przygotowanie do egzaminów",
     points: exams,
     reviewId: "agata-grzesiak",
     cta: "Umów przygotowanie do egzaminu",
-    note: "Opinie opisują indywidualne doświadczenia uczniów. Wynik egzaminu zawsze zależy też od Twojej pracy własnej.",
+    note: "Opinie opisują doświadczenia konkretnych uczniów. Wynik egzaminu zależy też od Twojej pracy.",
   },
   {
     id: "biznes",
     label: "Potrzebuję angielskiego w pracy",
-    lead: "Angielski, którego naprawdę używasz w pracy — spotkania, maile, prezentacje, rozmowy z klientem. Zajęcia prowadzi korporacyjny trener Business English z certyfikatem LCCI.",
+    lead: "Uczysz się angielskiego, którego używasz w pracy: na spotkaniach, w mailach, prezentacjach i rozmowach z klientem. Zajęcia prowadzi korporacyjny trener Business English z certyfikatem LCCI.",
     pointsLabel: "Typowe tematy",
     points: [
       "Spotkania i rozmowy online",

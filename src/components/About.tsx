@@ -99,7 +99,7 @@ export function About() {
               <Image
                 data-about="photo"
                 src="/img/marek-portret.png"
-                alt={`${site.teacher} — nauczyciel i założyciel Level Up`}
+                alt={`${site.teacher}, nauczyciel angielskiego w Level Up`}
                 fill
                 quality={92}
                 sizes="(max-width: 1023px) 370px, 420px"

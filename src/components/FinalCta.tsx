@@ -247,8 +247,8 @@ export function FinalCta() {
             </div>
 
             <p className="mt-3 max-w-[52ch] text-[12.5px] leading-relaxed text-white/40">
-              Zajęcia prowadzone są online. Jeżeli szukasz spotkań
-              stacjonarnych w {site.cityIn} — zapytaj przy zgłoszeniu.
+              Zajęcia odbywają się online. Jeśli wolisz spotkania na miejscu
+              w {site.cityIn}, zapytaj o to w zgłoszeniu.
             </p>
           </div>
         </div>

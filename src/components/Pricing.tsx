@@ -49,8 +49,8 @@ export function Pricing() {
             </h2>
           </div>
           <p className="t-body text-ink/60 max-w-[34ch] text-[15.5px] md:col-span-5 md:justify-self-end md:text-right">
-            Zajęcia online. Materiały do nauki są w cenie — nie dokupujesz
-            podręcznika.
+            Zajęcia odbywają się online. Materiały do nauki są w cenie, więc nie
+            musisz kupować podręcznika.
           </p>
         </div>
 
@@ -145,8 +145,8 @@ export function Pricing() {
         </div>
 
         <p className="text-ink/40 mt-10 max-w-[62ch] text-[12.5px] leading-relaxed">
-          Ceny dotyczą zajęć online. Szczegóły — długość zajęć w mini-grupach,
-          terminy i częstotliwość — ustalamy przed pierwszą lekcją.
+          Ceny dotyczą zajęć online. Długość zajęć w mini-grupach, terminy
+          i częstotliwość ustalamy przed pierwszą lekcją.
         </p>
       </div>
     </section>

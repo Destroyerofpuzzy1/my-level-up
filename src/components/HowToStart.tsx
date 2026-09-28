@@ -8,12 +8,12 @@ const STEPS = [
   {
     n: "01",
     title: "Powiedz, czego potrzebujesz",
-    copy: "Krótki formularz: cel, poziom i godziny, które Ci pasują.",
+    copy: "Wypełnij krótki formularz. Napisz, jaki masz cel, poziom i kiedy możesz się uczyć.",
   },
   {
     n: "02",
     title: "Wybierz rodzaj zajęć",
-    copy: "Indywidualnie albo w mini-grupie — cennik masz wyżej, bez dopłat.",
+    copy: "Indywidualnie albo w mini-grupie. Ceny znajdziesz w cenniku powyżej.",
   },
   {
     n: "03",

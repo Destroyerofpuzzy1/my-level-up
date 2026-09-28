@@ -20,9 +20,8 @@ export function Footer() {
               />
             </span>
             <p className="mt-5 max-w-[34ch] text-[13.5px] leading-relaxed text-white/45">
-              {site.legalName} — angielski online dla młodzieży i dorosłych.
-              {" "}
-              {site.city}.
+              {site.legalName}, {site.city}. Angielski online dla młodzieży
+              i dorosłych.
             </p>
           </div>
 

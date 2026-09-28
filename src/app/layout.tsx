@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
   title: {
     default:
-      "Level Up — angielski online | Szkoła językowa Częstochowa, Marek Pydziński",
+      "Angielski online | Level Up Szkoła Językowa Częstochowa, Marek Pydziński",
     template: "%s | Level Up Szkoła Językowa",
   },
   description:
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: "pl_PL",
     url: site.siteUrl,
     siteName: site.name,
-    title: "Level Up — zacznij mówić po angielsku",
+    title: "Zacznij mówić po angielsku | Level Up",
     description:
       "Lekcje angielskiego online dopasowane do Twojego poziomu. Indywidualnie lub w małej grupie. Matura, egzamin ósmoklasisty, FCE, CAE, Business English.",
   },

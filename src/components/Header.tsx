@@ -52,7 +52,7 @@ export function Header() {
           <a
             href="#top"
             className="flex shrink-0 items-center"
-            aria-label="Level Up Szkoła Językowa — początek strony"
+            aria-label="Level Up Szkoła Językowa, wróć na początek strony"
           >
             <Image
               src="/img/logo-level-up.png"

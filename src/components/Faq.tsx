@@ -36,14 +36,14 @@ export function Faq() {
               pytania?
             </h2>
             <p className="t-body text-ink/60 mt-6 max-w-[30ch] text-[15.5px]">
-              Jeśli czegoś tu brakuje — napisz albo zadzwoń pod{" "}
+              Nie ma tu Twojego pytania? Zadzwoń pod{" "}
               <a
                 href={site.phoneHref}
                 className="text-ink underline underline-offset-4"
               >
                 {site.phone}
-              </a>
-              .
+              </a>{" "}
+              albo napisz.
             </p>
           </div>
         </div>
