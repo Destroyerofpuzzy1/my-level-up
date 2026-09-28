@@ -23,7 +23,7 @@ export function reducedMotion() {
  * do korzenia sekcji.
  */
 export function useGsap<T extends HTMLElement = HTMLDivElement>(
-  setup: (ctx: { self: T }) => void,
+  setup: (ctx: { self: T }) => void | (() => void),
   deps: unknown[] = [],
 ) {
   const scope = useRef<T>(null);
@@ -31,8 +31,14 @@ export function useGsap<T extends HTMLElement = HTMLDivElement>(
   useIsoLayoutEffect(() => {
     const self = scope.current;
     if (!self) return;
-    const ctx = gsap.context(() => setup({ self }), self);
-    return () => ctx.revert();
+    let cleanup: void | (() => void);
+    const ctx = gsap.context(() => {
+      cleanup = setup({ self });
+    }, self);
+    return () => {
+      if (typeof cleanup === "function") cleanup();
+      ctx.revert();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 

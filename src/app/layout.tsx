@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
+import { introBootScript } from "@/lib/intro";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -63,7 +64,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pl" className={`${jakarta.variable} ${sourceSerif.variable}`}>
+    // suppressHydrationWarning: skrypt intro ustawia data-intro na <html>
+    // przed hydracją — to jedyna zamierzona różnica względem HTML z serwera.
+    <html
+      lang="pl"
+      className={`${jakarta.variable} ${sourceSerif.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: introBootScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

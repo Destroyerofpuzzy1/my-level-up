@@ -2,6 +2,7 @@
 
 import { BookingProvider } from "./booking/BookingContext";
 import { BookingModal } from "./booking/BookingModal";
+import { BrandIntro } from "./BrandIntro";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { LevelProgress } from "./LevelProgress";
@@ -17,6 +18,7 @@ import { Footer } from "./Footer";
 export function Site() {
   return (
     <BookingProvider>
+      <BrandIntro />
       <Header />
       <main>
         <Hero />

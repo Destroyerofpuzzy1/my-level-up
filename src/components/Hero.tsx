@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { EASE, gsap, reducedMotion, useGsap } from "@/lib/anim";
+import { onIntroReveal } from "@/lib/intro";
 import { googleRating, site } from "@/lib/site";
 import { Button, ButtonLink } from "./ui/Button";
 import { GoogleG, Stars } from "./ui/Stars";
@@ -17,7 +18,10 @@ export function Hero() {
   const scope = useGsap<HTMLElement>(() => {
     if (reducedMotion()) return;
 
-    const tl = gsap.timeline({ defaults: { ease: EASE } });
+    // Stany początkowe ustawiają się od razu (fromTo), a sama animacja
+    // startuje dopiero, gdy intro rozsuwa kurtynę — albo od razu, jeśli
+    // intro nie gra (kolejna wizyta w tej karcie, reduced motion).
+    const tl = gsap.timeline({ defaults: { ease: EASE }, paused: true });
 
     tl.fromTo(
       "[data-hero='photo']",
@@ -54,6 +58,8 @@ export function Hero() {
         { y: 0, opacity: 1, duration: 0.7, stagger: 0.09 },
         0.85,
       );
+
+    return onIntroReveal(() => tl.play());
   }, []);
 
   return (

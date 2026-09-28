@@ -249,11 +249,179 @@ body {
 }
 
 /* ------------------------------------------------------------------ *
+ *  Intro z logo (raz na kartę) — cała choreografia w CSS
+ *  0.05–0.65s logo (maska + lekki wzrost) · 0.32s krótka czerwona linia
+ *  0.80s linia rozciąga się na całą szerokość · 0.92s logo odpływa
+ *  1.15–1.70s kurtyna rozsuwa się wzdłuż linii · 1.72s nakładka znika
+ * ------------------------------------------------------------------ */
+.intro {
+  --intro-logo-h: 124px;
+  --intro-gap: 26px;
+  --intro-short: 140px;
+  --intro-full-at: 0.8s;
+  --intro-out-at: 0.92s;
+  --intro-curtain-at: 1.15s;
+  --intro-curtain-dur: 0.55s;
+  --intro-end: 1.72s;
+  --intro-seam: calc(50% + var(--intro-logo-h) / 2 + var(--intro-gap));
+  --intro-ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --intro-ease-io: cubic-bezier(0.77, 0, 0.175, 1);
+
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  /* sam kontener nie łapie kliknięć — tylko panele, dopóki zasłaniają */
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .intro {
+    --intro-logo-h: 96px;
+    --intro-gap: 20px;
+    --intro-short: 104px;
+    --intro-full-at: 0.74s;
+    --intro-out-at: 0.84s;
+    --intro-curtain-at: 1.05s;
+    --intro-curtain-dur: 0.45s;
+    --intro-end: 1.52s;
+  }
+}
+
+html[data-intro="play"] .intro {
+  display: block;
+  /* chowa się sama — także gdy JS w ogóle nie zadziała */
+  animation: intro-hide 0s linear var(--intro-end) forwards;
+}
+
+.intro-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: var(--color-paper);
+  pointer-events: auto;
+  will-change: transform;
+}
+
+.intro-panel--top {
+  top: 0;
+  height: var(--intro-seam);
+  animation: intro-curtain-up var(--intro-curtain-dur) var(--intro-ease-io)
+    var(--intro-curtain-at) forwards;
+}
+
+.intro-panel--bottom {
+  top: var(--intro-seam);
+  bottom: 0;
+  animation: intro-curtain-down var(--intro-curtain-dur) var(--intro-ease-io)
+    var(--intro-curtain-at) forwards;
+}
+
+.intro-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  animation:
+    intro-logo-in 0.6s var(--intro-ease-out) 0.05s forwards,
+    intro-logo-out 0.28s var(--intro-ease-io) var(--intro-out-at) forwards;
+}
+
+.intro-logo img {
+  display: block;
+  height: var(--intro-logo-h);
+  width: auto;
+}
+
+.intro-line {
+  position: absolute;
+  top: var(--intro-seam);
+  height: 2px;
+  margin-top: -1px;
+  background: var(--color-signal);
+  transform: scaleX(0);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.intro-line--short {
+  left: 50%;
+  width: var(--intro-short);
+  margin-left: calc(var(--intro-short) / -2);
+  animation:
+    intro-grow 0.5s var(--intro-ease-out) 0.32s forwards,
+    intro-fade 0.2s ease var(--intro-curtain-at) forwards;
+}
+
+.intro-line--full {
+  left: 0;
+  right: 0;
+  animation:
+    intro-grow 0.4s var(--intro-ease-io) var(--intro-full-at) forwards,
+    intro-fade 0.2s ease var(--intro-curtain-at) forwards;
+}
+
+@keyframes intro-logo-in {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(14px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+}
+
+@keyframes intro-logo-out {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes intro-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes intro-fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes intro-curtain-up {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes intro-curtain-down {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes intro-hide {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ------------------------------------------------------------------ *
  *  Reduced motion
  * ------------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  html[data-intro] .intro {
+    display: none !important;
   }
   .marquee {
     overflow-x: auto;
